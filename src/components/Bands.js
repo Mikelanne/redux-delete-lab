@@ -1,12 +1,15 @@
 import React from 'react'
+import Band from './Band'
 
 const Bands = (props) => {
 
-    const band = props.bands.map((band, index)=> <Band key={index} band={band}/>)
+    const bands = props.bands.map((band)=> <Band key={band.id} {...band} deleteBand={props.deleteBand}/>)
 
-    render (
+    return (
         <div>
-            {band}
+            {bands}
         </div>
     )
 }
+
+export default Bands
